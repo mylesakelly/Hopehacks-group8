@@ -6,13 +6,22 @@
   /* font-size: -0.5rem; */
 }
 
+#header {
+  background-image: url("kids-2.avif");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+
 section {
   background-color: #cee5d0;
 }
 
-body {
-  background-color: beige;
-}
+/* body {
+  background-color: beige; 
+} */
 
 .container1 {
   width: 95%;
@@ -71,7 +80,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 110vh;
-  background: #f3f0d7;
+  /* background: #f3f0d7; */
 }
 .nav {
   position: fixed;
@@ -148,7 +157,7 @@ body {
 }
 .login-container {
   position: absolute;
-  left: 4px;
+  left: px;
   width: 500px;
   display: flex;
   flex-direction: column;
@@ -281,21 +290,45 @@ header {
     background: rgba(255, 255, 255, 0.15);
   } */
 }
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 500px) {
   .wrapper {
     min-height: 100vh;
   }
   .form-box {
     width: 100%;
     height: 500px;
+    margin: 2px;
+  }
+
+  .i1 {
+    left: 550px;
   }
   .register-container,
   .login-container {
     width: 100%;
-    padding: 0 20px;
+    padding: 98 20px;
   }
   .register-container .two-forms {
     flex-direction: column;
     gap: 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .form-box {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .form-box {
+    width: 100%;
+  }
+}
+
+/* Media query for screens with width between 321px and 728px */
+@media screen and (min-width: 321px) and (max-width: 728px) {
+  .form-box {
+    width: 100%;
   }
 }
