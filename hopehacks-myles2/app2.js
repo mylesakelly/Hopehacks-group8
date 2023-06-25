@@ -46,7 +46,6 @@ app.post('/users', (req, res) => {
 
     } 
     
-    
     else {
 
 // Register a new user! YAY!
