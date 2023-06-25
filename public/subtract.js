@@ -6,6 +6,12 @@ const num1Element = document.getElementById("num1");
 const num2Element = document.getElementById("num2");
 let answer = 0;
 
+
+
+//This function generates a new math equation with random numbers and assigns values to various variables.
+
+
+
 function generate_equation() {
   // Generating a random number between 0 and 12 and assigning it to "num1" and "num2"
   const num1 = Math.floor(Math.random() * 13);
@@ -15,7 +21,7 @@ function generate_equation() {
   const allAnswers = []; // Creating an empty array to store all possible answers
   const switchAnswers = []; // Creating an empty array to store the shuffled answers
 
-  answer = num1 - num2; // holds the correct addition answer
+  answer = num1 - num2; // holds the correct subtraction answer
 
   num1Element.textContent = num1; // Setting the text content of the random numbers generated for the addition equation
   num2Element.textContent = num2;
