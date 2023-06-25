@@ -15,7 +15,7 @@ function generate_equation() {
   const allAnswers = []; // Creating an empty array to store all possible answers
   const switchAnswers = []; // Creating an empty array to store the shuffled answers
 
-  answer = num1 + num2; // holds the correct addition answer
+  answer = num1 * num2; // holds the correct addition answer
 
   num1Element.textContent = num1; // Setting the text content of the random numbers generated for the addition equation
   num2Element.textContent = num2;
