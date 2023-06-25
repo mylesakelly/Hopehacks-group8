@@ -35,18 +35,25 @@ app.post('/users', (req, res) => {
   // Query database to check if user exists!
 
   const selectQuery = 'SELECT * FROM accounts WHERE username = ? AND password = ?';
+  
   connection.query(selectQuery, [username, password], (error, results) => {
     if (error) {
       console.error('Error executing the query:', error);
       res.status(500).send('Internal Server Error');
-    } else if (results.length === 0) {
-      res.status(401).send("login succesful");
-    } else {
+
+    } else if (results.length > 0) {
+      res.status(200).send("Login successful");
+
+    } 
+    
+    
+    else {
 
 // Register a new user! YAY!
 
     const insertQuery = 'INSERT INTO accounts (username, password, email, first_name, last_name) VALUES (?,?,?,?,?)';
     connection.query(insertQuery, [username, password, email, firstname, lastname ], (insertError, insertResults) => {
+      
       if (insertError) {
         console.log("error inserting user:", insertError);
         res.status(500).send('Internal Server Error with Inserting User');
