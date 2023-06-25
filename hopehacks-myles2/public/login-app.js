@@ -96,6 +96,7 @@ function myMenuFunction() {
   
   .then(data => {
     console.log('Response data:', data);
+    alert('Account Successfully Created!');
     // if (response.status === 200) {
     //   // Redirect to the home page or perform any other action upon successful login
     //   window.location.href = '/';
