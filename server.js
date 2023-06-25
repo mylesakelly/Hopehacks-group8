@@ -9,7 +9,7 @@ const port = 5000;
 
 // Serve static files
 app.use(express.static('public'));
-app.use('/dist', express.static(path.join(__dirname, 'dist')));
+
 
 // Parse JSON bodies
 app.use(bodyParser.json());

@@ -75,7 +75,7 @@ function generate_equation() {
 
   option3.onclick = function () {
     if (switchAnswers[2] === answer) {
-      fetch('http://localhost:5000/', { // Replace with your server's URL
+      fetch('http://localhost:5000/', { // Replace with your server's URL // url of where you're hosting server
       method: 'POST',
       body: JSON.stringify({ number: switchAnswers[0] }),
       headers: {
