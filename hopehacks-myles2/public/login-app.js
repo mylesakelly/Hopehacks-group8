@@ -63,8 +63,7 @@ function myMenuFunction() {
   }
 
   function addUser() {
-    
-
+  
     const firstNameInput = document.getElementById('registerFirstName');
     const lastNameInput = document.getElementById('registerLastName');
     const passwordInput = document.getElementById('registerNewPwd');
@@ -77,38 +76,51 @@ function myMenuFunction() {
     const email = emailInput.value;
     const password = passwordInput.value;
 
-
-
-
-  fetch('/users', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({username, firstname, lastname, email, password})
-  })
-  .then(response => {
-    // console.log('Response:', response);
-    // console.log('Status:', response.status)
-    // console.log('response');
-    return response.json();
-  })
-  
-  .then(data => {
-    console.log('Response data:', data);
-    alert('Account Successfully Created!');
-    // if (response.status === 200) {
-    //   // Redirect to the home page or perform any other action upon successful login
-    //   window.location.href = '/';
-    // } else if (response.status === 401) {
-    //   alert('Invalid entries');
-    // } else {
-    //   throw new Error('Registration failed');
-    // }
-  })
-  .catch(error => {
-    console.error(error);
-    alert('Registration Failed');
-  });
+    fetch('/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({username, firstname, lastname, email, password})
+    })
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      console.log('Response data:', data);
+      alert('Account Successfully Created!');
+    })
+    .catch(error => {
+      console.error(error);
+      alert('Registration Failed');
+    });
 }
 
+// Allows user to change their password in the mysql database
+
+function ResetPassword() {
+  const newPasswordInput = document.getElementById('Password');
+  const confirmInput = document.getElementById('ConfirmPassword');
+  const emailInput = document.getElementById('email');
+  const email = emailInput.value;
+  const newpassword = newPasswordInput.value;
+  const confirmpassword = confirmInput.value;
+fetch('/HopeHacks1', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({email, newpassword, confirmpassword})
+})
+.then(response => {
+  return response.json();
+})
+.then(data => {
+  console.log('Response data:', data);
+  alert('Account Successfully Created!');
+})
+.catch(error => {
+  console.error(error);
+  alert('Registration Failed');
+});
+}

@@ -34,7 +34,7 @@
 }
   </style>
   <title>Add</title>
-  
+
 </head>
 <body>
   <header>
@@ -43,8 +43,7 @@
         <h2><span><i class="fa fa-trophy" aria-hidden="true"></i></span> MATH MANIA</h2>
         <nav>
           <ul>
-            <li><a href="./login.html"> Login</a></li>
-            <li><a href="./admin.html"> Admin</a></li>
+            <li><a href="#"> Login</a></li>
           </ul>
         </nav>
       </div>
@@ -53,10 +52,14 @@
 
   <div id="modal" class="modal">
     <div class="modal-content">
-      <p>Congratulations! You got the right answer! Here's and interesting fact about  <span id="modal-correct-answer"></span></p>
+      <p>Congratulations! You got the right answer! <br>
+         Here's and interesting fact about  <span id="modal-correct-answer"></span> :
+         <br>
+        <br> <span id="trivia"></span>
+      </p>
     </div>
   </div>
-  
+
   <div class="wrapper">
       <div class="equation">
         <h1  id="num1" style="color:#FFBF86"></h1>
@@ -78,12 +81,11 @@
       </div>
   </div>
 
-
   <div class="btn-container">
-  <button class="delete-user-btn" onclick="deleteUser(1)">Delete Account</button>
-  </div>
-
+    <button class="delete-user-btn" onclick="deleteUser(1)">Delete Account</button>
+    </div>
+    
   <script src="add.js"></script>
-  
+
 </body>
 </html>

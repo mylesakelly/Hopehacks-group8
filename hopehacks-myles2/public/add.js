@@ -131,4 +131,3 @@ function deleteUser(userId) {
       // Handle the error case
     });
 }
-
