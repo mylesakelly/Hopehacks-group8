@@ -50,7 +50,7 @@
               MANIA
             </h2></header>
           </div>
-          <div class="input-box">
+          <!-- <div class="input-box">
             <input
               type="text"
               class="input-field" id="Password"
@@ -61,14 +61,23 @@
           <div class="input-box">
             <input type="password" class="input-field" id="Confirm" placeholder="Confirm Password" />
             <i class="bx bx-lock-alt"></i>
-          </div>
+          </div> -->
+
+          <!-- <form>
           <div class="input-box">
             <form action="/reset-password" method="post">
-            <a href="reset.html" onclick="register()">
+            <a href="reset.html">
             <input type="submit" class="submit" onclick="resetPassword()" value="Reset Password"></a>
-            </form>
-          </div>
-          <div class="two-col">
+            </form> -->
+
+            <form id="passwordForm">
+  <input type="password" id="newPassword" placeholder="Enter new password" />
+  <button type="submit">Change Password</button>
+</form>
+       
+
+
+          <!-- <div class="two-col">
             <div class="one">
               <input type="checkbox" id="login-check" />
               <label for="login-check"> Remember Me</label>
@@ -76,9 +85,9 @@
             <div class="two">
                 <label><a href="/index.html" onclick="register()" type="submit" class="submit">Forgot password?</a></label>
               </div>
-          </div>
+          </div> -->
         </div>
-        <script src="app1.js
+        <script src="login-app.js
     "></script>
 </body>
 </html>

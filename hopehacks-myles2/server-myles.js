@@ -68,18 +68,33 @@ app.post('/users', (req, res) => {
 
 // Reset the password logged in the mysql database
 
+// app.post('/users', (req, res) => {
+//   const { password } = req.body;
+//         const updateQuery = 'UPDATE accounts SET password = ? WHERE password = ?';
+//   connection.query(updateQuery, [password, 'test'], (error, results) => {
+//     if (error) {
+//       console.error('Error executing the query:', error);
+//       res.status(500).send('Internal Server Error');
+//     } else {
+//       res.status(200).send(results);
+//     }
+//       });
+//     });
+
 app.post('/reset-password', (req, res) => {
   const { password } = req.body;
-        const updateQuery = 'UPDATE ResetPassword SET password = ? WHERE password = test';
-  connection.query(updateQuery, [password], (error, results) => {
+  const userId = 2; // harcoded the user password to be changed for demonstration purposes
+
+  const updateQuery = 'UPDATE accounts SET password = ? WHERE id = ?';
+  connection.query(updateQuery, [password, userId], (error, results) => {
     if (error) {
       console.error('Error executing the query:', error);
       res.status(500).send('Internal Server Error');
     } else {
-      res.status(200).send('Password updated successfully' + results);
+      res.status(200).send('Password updated successfully');
     }
-      });
-    });
+  });
+});
 
 // READ all users from mySQL Database
 
@@ -113,7 +128,7 @@ app.get('/users/2', (req, res) => {
 
 app.delete('/users/2', (req, res) => {
   const userId = req.params.id;
-  const query = 'DELETE FROM accounts WHERE id = 2';
+  const query = 'DELETE FROM accounts WHERE id = 2'; //hardcoding the id to be deleted for demonstration purposes
 
   connection.query(query, [userId], (error, results) => {
     if (error) {
@@ -185,6 +200,10 @@ app.use((req, res, next) => {
 
 app.get('/resetpasswordhome', (req, res) => {
   res.status(200).sendFile(path.join(__dirname, '/public/reset.html'));
+});
+
+app.get('/reset-password', (req, res) => {
+  res.status(200).sendFile(__dirname + '/public/reset-password.html');
 });
 
 app.get('/', (req, res) => {

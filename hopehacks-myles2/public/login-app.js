@@ -98,29 +98,26 @@ function myMenuFunction() {
 
 // Allows user to change their password in the mysql database
 
-function ResetPassword() {
-  const newPasswordInput = document.getElementById('Password');
-  const confirmInput = document.getElementById('ConfirmPassword');
-  const emailInput = document.getElementById('email');
-  const email = emailInput.value;
-  const newpassword = newPasswordInput.value;
-  const confirmpassword = confirmInput.value;
-fetch('/HopeHacks1', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({email, newpassword, confirmpassword})
-})
-.then(response => {
-  return response.json();
-})
-.then(data => {
-  console.log('Response data:', data);
-  alert('Account Successfully Created!');
-})
-.catch(error => {
-  console.error(error);
-  alert('Registration Failed');
+document.getElementById('passwordForm').addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const password = document.getElementById('newPassword').value;
+
+  fetch('/reset-password', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ password }),
+  })
+    .then((response) => response.text())
+    .then((data) => {
+      console.log(data);
+      // Handle success or display a success message to the user
+    })
+    .catch((error) => {
+      console.error(error);
+      // Handle error or display an error message to the user
+    });
 });
-}
+
